@@ -9,8 +9,8 @@ export default {
 };
 </script>
 
-<style>
-#app {
+<style scoped>
+#app-vue3 {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

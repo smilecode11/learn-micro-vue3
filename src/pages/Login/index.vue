@@ -12,12 +12,16 @@
     <button type="submit" @click="login">登录</button>
   </form>
   <hr />
-  <div>login user:{{loginUser.user || '未知'}} - role: {{loginUser.role}}</div>
+  <div>
+    login user:{{ loginUser.user || "未知" }} - role: {{ loginUser.role }}
+  </div>
 </template>
 
 <script>
 import axios from "axios";
-import { ref, reactive, defineComponent } from "vue";
+import { ref, reactive, defineComponent, onMounted } from "vue";
+import { getMain } from "../../utils/main";
+
 export default defineComponent({
   name: "LoginPage",
   setup() {
@@ -43,6 +47,13 @@ export default defineComponent({
     const loginUser = reactive({
       user: "",
       role: 1,
+    });
+
+    onMounted(() => {
+      //  设置头部
+      const main = getMain();
+      main.appInfo.footer.changeFooter(false);
+      main.appInfo.header.changeHeader(false);
     });
 
     return {
