@@ -23,10 +23,17 @@ export const mount = (app) => {
     render()
     // app.appInfo.header.changeHeader(false)
     setMain(app)    //  通过 setMain 进行本地 mian 存储
-    
+
     // 执行挂载到 window 上的 testevnet 事件
     window.custom.emit('testevent', {
-        test:'123'
+        test: '123'
+    })
+    window.custom.on('test1', (data) => {
+        console.log('test1 on - ', data)
+
+        window.custom.emit('test2', {
+            test2: '123'
+        })
     })
 }
 
