@@ -18,8 +18,9 @@ module.exports = {
       }
     },
     output: {
-      libraryTarget: "umd", //  子应用打包成 umd 格式
-      library: `${name}`,  //  子应用写入到 window 中
+      library: `${name}-[name]`,
+      libraryTarget: 'umd',
+      // jsonpFunction: `webpackJsonp_${name}`,
     }
   }
 }

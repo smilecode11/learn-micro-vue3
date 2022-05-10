@@ -52,8 +52,8 @@ export default defineComponent({
     onMounted(() => {
       //  设置头部
       const main = getMain();
-      main.appInfo.footer.changeFooter(false);
-      main.appInfo.header.changeHeader(false);
+      main?.appInfo?.footer?.changeFooter(false);
+      main?.appInfo?.header?.changeHeader(false);
     });
 
     return {
